@@ -7,6 +7,9 @@ import org.junit.Test;
 
 public class FactoryHashTest {
 
+	
+	//http://stackoverflow.com/questions/16955446/factory-pattern-with-cdi-depending-on-runtime-parameter
+	
 	@Before
 	public void setUp() throws Exception {
 	}
