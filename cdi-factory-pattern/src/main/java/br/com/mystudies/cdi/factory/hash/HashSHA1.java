@@ -1,8 +1,8 @@
-package br.com.mystudies.cdi.hash;
+package br.com.mystudies.cdi.factory.hash;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
-import br.com.mystudies.cdi.qualifier.SHA1;
+import br.com.mystudies.cdi.factory.qualifier.SHA1;
 
 
 @SHA1

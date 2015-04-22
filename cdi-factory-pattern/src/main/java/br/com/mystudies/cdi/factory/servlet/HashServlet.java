@@ -1,4 +1,4 @@
-package br.com.mystudies.cdi.bean.servlet;
+package br.com.mystudies.cdi.factory.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.mystudies.cdi.hash.Hash;
-import br.com.mystudies.cdi.qualifier.MD5;
-import br.com.mystudies.cdi.qualifier.SHA1;
-import br.com.mystudies.cdi.qualifier.SHA256;
+import br.com.mystudies.cdi.factory.hash.Hash;
+import br.com.mystudies.cdi.factory.qualifier.MD5;
+import br.com.mystudies.cdi.factory.qualifier.SHA1;
+import br.com.mystudies.cdi.factory.qualifier.SHA256;
 
 
 @WebServlet("/hash")

@@ -1,8 +1,8 @@
-package br.com.mystudies.cdi.hash;
+package br.com.mystudies.cdi.factory.hash;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
-import br.com.mystudies.cdi.qualifier.MD5;
+import br.com.mystudies.cdi.factory.qualifier.MD5;
 
 
 

@@ -1,4 +1,4 @@
-package br.com.mystudies.cdi.hash;
+package br.com.mystudies.cdi.factory.hash;
 
 public interface Hash {
 
