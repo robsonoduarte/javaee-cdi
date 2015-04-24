@@ -1,4 +1,4 @@
-cdi-qualifiers
+Factory pattern with CDI depending on runtime parameter
 ==============
 
 * project for studies about CDI specification.
