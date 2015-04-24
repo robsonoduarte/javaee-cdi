@@ -1,5 +1,7 @@
 package br.com.mystudies.cdi.factory.servlet;
 
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -10,10 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.mystudies.cdi.factory.hash.Hash;
-import br.com.mystudies.cdi.factory.qualifier.MD5;
-import br.com.mystudies.cdi.factory.qualifier.SHA1;
-import br.com.mystudies.cdi.factory.qualifier.SHA256;
+import br.com.mystudies.cdi.factory.Algorithm;
+import br.com.mystudies.cdi.factory.FactoryHash;
+import br.com.mystudies.cdi.hash.Hash;
 
 
 @WebServlet("/hash")
@@ -23,49 +24,36 @@ public class HashServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-	
-	@Inject @MD5
-	private Hash md5;
-	
-	@Inject @SHA1
-	private Hash sha1;
-	
-	@Inject @SHA256
-	private Hash sha256;
+	@Inject
+	private FactoryHash factoryHash;
 	
 	
+	//http://localhost:8080/cdi-factory-pattern/hash?algorithm=MD5&value=@robsonoduarte
+	//http://localhost:8080/cdi-factory-pattern/hash?algorithm=SHA1&value=@robsonoduarte
+	//http://localhost:8080/cdi-factory-pattern/hash?algorithm=SHA256&value=@robsonoduarte
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String algoritmo = request.getParameter("algoritmo");
-		String nome = request.getParameter("nome");
-		
-		
-		if(algoritmo == null)
-			throw new ServletException("Algoritmo está nulo");
-		
-		String print = null;
-		
-		switch (algoritmo) {
-		
-			case "md5":
-				print = md5.getHash(nome);
-				break;
-				
-			case "sha1":
-				print = sha1.getHash(nome);
-				break;
-				
-			case "sha256":
-				print = sha256.getHash(nome);
-				break;
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 	
-			default:
-				throw new ServletException("não existe algoritmo de hash para o parametro passado..: " + algoritmo);
-		}
+		Hash hash = factoryHash.create(algorithm(request)) ;
 		
 		PrintWriter printWriter = response.getWriter();
-		printWriter.print(print);
+		printWriter.print(hash.digest(value(request)));		
 	}
 
+
+
+	
+
+
+
+
+	private Algorithm algorithm(HttpServletRequest request) {
+		String algorithm = isNotBlank(request.getParameter("algorithm") ) ? request.getParameter("algorithm") : "MD5" ;
+		return Algorithm.valueOf(algorithm);
+	}
+
+	
+	private String value(HttpServletRequest request) {
+		return isNotBlank(request.getParameter("value")) ? request.getParameter("value") : "defualt";
+	}
 }
