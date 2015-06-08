@@ -1,4 +1,4 @@
-cdi-qualifiers
+Decorator pattern with CDI 
 ==============
 
 * project for studies about CDI specification.
