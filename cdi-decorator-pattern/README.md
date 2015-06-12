@@ -5,4 +5,6 @@ Decorator pattern with CDI
 
      --------------------------------------------
   >  This project we will study how use Decorator pattern with CDI with the Decorator..
+  
+  http://www.javacodegeeks.com/2011/10/java-ee6-decorators-decorating-classes.html
 
