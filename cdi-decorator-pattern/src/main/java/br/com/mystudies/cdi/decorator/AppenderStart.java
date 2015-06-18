@@ -5,7 +5,7 @@ import br.com.mystudies.cdi.domain.NotaFiscal;
 public class AppenderStart implements Appender {
 
 	@Override
-	public NotaFiscal append(NotaFiscalRequestData notaFiscalRequestData) {
+	public NotaFiscal append(NotaFiscal notaFiscalRequestData) {
 		// TODO Auto-generated method stub
 		return null;
 	}

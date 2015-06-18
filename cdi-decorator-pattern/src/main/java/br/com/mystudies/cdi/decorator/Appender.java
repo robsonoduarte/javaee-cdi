@@ -4,5 +4,5 @@ import br.com.mystudies.cdi.domain.NotaFiscal;
 
 interface Appender {
 
-	public NotaFiscal append(NotaFiscalRequestData  notaFiscalRequestData);
+	public NotaFiscal append(NotaFiscal  notaFiscalRequestData);
 }
