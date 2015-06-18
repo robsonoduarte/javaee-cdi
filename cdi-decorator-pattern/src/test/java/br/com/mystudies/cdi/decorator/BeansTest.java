@@ -1,4 +1,4 @@
-package br.com.mystudies.cdi;
+package br.com.mystudies.cdi.decorator;
 
 import static org.junit.Assert.*;
 
