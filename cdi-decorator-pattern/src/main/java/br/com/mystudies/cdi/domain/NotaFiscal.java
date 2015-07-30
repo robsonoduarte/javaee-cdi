@@ -2,13 +2,21 @@ package br.com.mystudies.cdi.domain;
 
 public class NotaFiscal {
 
+	public Emitente emitente;
 
-	public Imposto imposto;
-	
-	
-	public Imposto imposto() {
-		return imposto;
+
+
+
+
+
+
+	public Emitente emitente() {
+		return emitente;
 	}
 
-	
+
+
+
+
+
 }
