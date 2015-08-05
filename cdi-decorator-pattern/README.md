@@ -1,10 +1,10 @@
-Decorator pattern with CDI 
+Decorator pattern with CDI
 ==============
 
-* project for studies about CDI specification to pattern.
+* project for studies how use CDI specification to pattern.
 
   --------------------------------------------
-  >  This project we will study how use Decorator pattern with CDI 
-  
+  >  This project we will study how use Decorator pattern with CDI
+
   http://www.javacodegeeks.com/2011/10/java-ee6-decorators-decorating-classes.html
 
