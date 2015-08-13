@@ -1,4 +1,7 @@
 package br.com.mystudies.cdi.appender;
+import static org.hamcrest.Matchers.notNullValue;
+import static org.junit.Assert.assertThat;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -25,7 +28,7 @@ public class AppenderNFeTest {
 
 	@Test
 	public void test() {
-		NotaFiscal nfe = appender.append(new NotaFiscal(), new Data());
+		assertThat(appender.append(new NotaFiscal(), new Data()), notNullValue());
 	}
 
 

@@ -6,8 +6,7 @@ public class AppenderNFe implements Appender {
 
 	@Override
 	public NotaFiscal append(NotaFiscal notaFiscal, Data data) {
-		// TODO Auto-generated method stub
-		return null;
+		return new NotaFiscal();
 	}
 
 }
