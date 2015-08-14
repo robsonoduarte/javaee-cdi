@@ -6,7 +6,9 @@ public class AppenderNFe implements Appender {
 
 	@Override
 	public NotaFiscal append(NotaFiscal notaFiscal, Data data) {
-		return new NotaFiscal();
+		notaFiscal.numero = "0000000001";
+		return notaFiscal;
 	}
+
 
 }
