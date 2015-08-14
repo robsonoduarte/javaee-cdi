@@ -22,6 +22,8 @@ public class AppenderEmitente implements Appender {
 
 		notaFiscal.emitente = data.emitente;
 
+		System.out.println("Appender Emitente - > " + notaFiscal);
+
 		return notaFiscal;
 	}
 

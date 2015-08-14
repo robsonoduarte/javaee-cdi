@@ -25,6 +25,8 @@ public class AppenderItens implements Appender {
 
 		notaFiscal.itens = data.itens;
 
+		System.out.println("Appender itens - > " + notaFiscal);
+
 		return notaFiscal;
 	}
 

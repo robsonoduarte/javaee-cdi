@@ -23,6 +23,8 @@ public class AppenderDestinatario implements Appender {
 
 		notaFiscal.destinatario = data.destinatario;
 
+		System.out.println("Appender Destinatario - > " + notaFiscal);
+
 		return notaFiscal;
 	}
 
