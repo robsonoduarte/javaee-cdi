@@ -1,6 +1,8 @@
 CDI Interceptor
 =====================================
 
-This project show how use the CDI Interceptors
+This project show how use the CDI Interceptors.
+
+Interecptors are...
  
  
