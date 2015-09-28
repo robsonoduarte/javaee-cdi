@@ -1,6 +1,5 @@
 package br.com.mystudies.cdi.interceptor;
 
-import static org.junit.Assert.*;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import javax.interceptor.InvocationContext;
