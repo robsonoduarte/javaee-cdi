@@ -1,5 +1,7 @@
 package br.com.mystudies.cdi.interceptor;
 
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import javax.interceptor.InvocationContext;
@@ -13,13 +15,16 @@ public class ValidatorOneTest {
 
 	
 	@InjectMocks
-	private ValidatorOne validator;
+	private ValidatorName validator;
 	
 	
 	
 	@Mock
 	private InvocationContext context;
 	
+
+	@Mock
+	private Entity Entity;
 	
 	
 	
@@ -31,8 +36,11 @@ public class ValidatorOneTest {
 
 	
 	@Test
-	public void test() {				
+	public void test() throws Exception {
+		when(context.getParameters()).thenReturn(new Object[]{});
 		validator.valid(context);
+		
+		verify(context).proceed();
 	}
 
 	

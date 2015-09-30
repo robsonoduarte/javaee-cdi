@@ -6,15 +6,15 @@ import javax.interceptor.InvocationContext;
 
 @Interceptor
 @Validator
-public class ValidatorOne {
+public class ValidatorName {
 
 	
 	
 	
 	
 	@AroundInvoke
-	public Object valid(InvocationContext context) {
-		return null;
+	public Object valid(InvocationContext context) throws Exception {
+		return context.proceed();
 	}
 
 	
