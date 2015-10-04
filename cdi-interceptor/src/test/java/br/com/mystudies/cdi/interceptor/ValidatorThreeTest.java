@@ -15,7 +15,7 @@ public class ValidatorThreeTest {
 
 	
 	@InjectMocks
-	private ValidatorName validator;
+	private ValidatorThree validator;
 	
 	
 	
