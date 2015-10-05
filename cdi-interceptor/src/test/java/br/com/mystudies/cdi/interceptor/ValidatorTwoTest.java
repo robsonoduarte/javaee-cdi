@@ -15,7 +15,7 @@ public class ValidatorTwoTest {
 
 	
 	@InjectMocks
-	private ValidatorName validator;
+	private ValidatorTwo validator;
 	
 	
 	
