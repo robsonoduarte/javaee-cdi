@@ -20,7 +20,7 @@ public class ServiceTest {
 	
 	@Test
 	public void test() {
-		service.save(new Entity());
+		service.save(new Person());
 	}
 
 }
