@@ -1,5 +1,7 @@
 package br.com.mystudies.cdi.interceptor;
 
-public class Entity {
+public class Person {
 
+	public String name;
+	
 }
