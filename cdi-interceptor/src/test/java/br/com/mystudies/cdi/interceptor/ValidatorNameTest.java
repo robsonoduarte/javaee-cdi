@@ -11,7 +11,7 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
-public class ValidatorOneTest {
+public class ValidatorNameTest {
 
 	
 	@InjectMocks
@@ -24,7 +24,7 @@ public class ValidatorOneTest {
 	
 
 	@Mock
-	private Entity Entity;
+	private Person person;
 	
 	
 	
@@ -35,14 +35,34 @@ public class ValidatorOneTest {
 
 
 	
-	@Test
-	public void test() throws Exception {
-		when(context.getParameters()).thenReturn(new Object[]{});
+
+	// lower case
+	
+	@Test(expected=ValidatorException.class)
+	public void shouldThrowsOneValidatorExceptionWhenNameStartWithLowerCase() throws Exception {
+		person.name = "robson Duarte";
+		when(context.getParameters()).thenReturn(new Object[]{person});
+		
+		validator.valid(context);		
+	}
+	
+	
+	
+	
+	
+	@Test()
+	public void shouldProccedWhenNameStartWithUpperCase() throws Exception {
+		person.name = "Robson Duarte";
+		when(context.getParameters()).thenReturn(new Object[]{person});
+		
 		validator.valid(context);
 		
 		verify(context).proceed();
 	}
 
+	
+	
+	
 	
 	
 }

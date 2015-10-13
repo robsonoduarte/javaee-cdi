@@ -24,7 +24,7 @@ public class ValidatorThreeTest {
 	
 
 	@Mock
-	private Entity Entity;
+	private Person Entity;
 	
 	
 	
