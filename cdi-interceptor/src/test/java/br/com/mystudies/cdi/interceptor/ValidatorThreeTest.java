@@ -13,36 +13,128 @@ import org.mockito.Mock;
 
 public class ValidatorThreeTest {
 
-	
+
 	@InjectMocks
-	private ValidatorThree validator;
-	
-	
-	
-	@Mock
-	private InvocationContext context;
-	
+	private ValidatorAge validator;
+
+
 
 	@Mock
-	private Person Entity;
-	
-	
-	
+	private InvocationContext context;
+
+
+
+	@Mock
+	private Person person;
+
+
+
+
 	@Before
 	public void setUp()throws Exception{
 		initMocks(this);
 	}
 
 
-	
-	@Test
-	public void test() throws Exception {
-		when(context.getParameters()).thenReturn(new Object[]{});
+
+
+
+
+
+
+	@Test(expected=ValidatorException.class)
+	public void shouldThrowsOneValidatorExceptionWhenAgeIsNegative() throws Exception {
+		person.age = -1;
+		when(context.getParameters()).thenReturn(new Object[]{person});
+
 		validator.valid(context);
-		
+	}
+
+
+
+
+
+
+
+	@Test(expected=ValidatorException.class)
+	public void shouldThrowsOneValidatorExceptionWhenAgeIsZero() throws Exception {
+		person.age = 0;
+		when(context.getParameters()).thenReturn(new Object[]{person});
+
+		validator.valid(context);
+	}
+
+
+
+
+
+	@Test()
+	public void shouldThrows() throws Exception {
+		person.age = 1;
+		when(context.getParameters()).thenReturn(new Object[]{person});
+
+		validator.valid(context);
+
+
 		verify(context).proceed();
 	}
 
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
