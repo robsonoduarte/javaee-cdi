@@ -36,7 +36,22 @@ public class ValidatorNameTest {
 
 	
 
-	// lower case
+
+	@Test(expected=ValidatorException.class)
+	public void shouldThrowsOneValidatorExceptionWhenNameIsNull() throws Exception {
+		when(context.getParameters()).thenReturn(new Object[]{person});
+		
+		validator.valid(context);		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	@Test(expected=ValidatorException.class)
 	public void shouldThrowsOneValidatorExceptionWhenNameStartWithLowerCase() throws Exception {
@@ -45,6 +60,10 @@ public class ValidatorNameTest {
 		
 		validator.valid(context);		
 	}
+	
+	
+	
+	
 	
 	
 	

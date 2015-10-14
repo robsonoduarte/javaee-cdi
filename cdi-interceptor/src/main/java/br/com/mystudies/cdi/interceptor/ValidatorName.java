@@ -1,6 +1,7 @@
 package br.com.mystudies.cdi.interceptor;
 
 import static java.lang.Character.isLowerCase;
+import static org.apache.commons.lang3.StringUtils.isBlank;
 
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
@@ -17,10 +18,10 @@ public class ValidatorName {
 	@AroundInvoke
 	public Object valid(InvocationContext context) throws Exception {
 		
-		Person person = person(context);
+		String name = name(context);
 		
 		
-		if(isLowerCase(person.name.charAt(0))){
+		if(isBlank(name) || isLowerCase(name.charAt(0))){
 			throw new ValidatorException("The name is invalid");
 		}
 	
@@ -28,6 +29,40 @@ public class ValidatorName {
 		return context.proceed();
 	}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
 	
 	
 	
@@ -60,6 +95,12 @@ public class ValidatorName {
 	
 	
 	
+	private String name(InvocationContext context) {
+		return person(context).name;
+	}
+
+
+
 	private Person person(InvocationContext context) {
 		return (Person) context.getParameters()[0];
 	}
