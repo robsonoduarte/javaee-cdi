@@ -2,10 +2,9 @@ package br.com.mystudies.cdi.interceptor;
 
 import javax.interceptor.InvocationContext;
 
-public class ValidatorTwo {
+public class ValidatorJob {
 
 	public void valid(InvocationContext context) {
-		// TODO Auto-generated method stub
 		
 	}
 

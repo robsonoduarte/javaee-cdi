@@ -11,11 +11,11 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
-public class ValidatorTwoTest {
+public class ValidatorJobTest {
 
 	
 	@InjectMocks
-	private ValidatorTwo validator;
+	private ValidatorJob validator;
 	
 	
 	
@@ -23,8 +23,10 @@ public class ValidatorTwoTest {
 	private InvocationContext context;
 	
 
+	
 	@Mock
-	private Person Entity;
+	private Person person;
+	
 	
 	
 	
@@ -35,11 +37,13 @@ public class ValidatorTwoTest {
 
 
 	
+	
+	
 	@Test
 	public void test() throws Exception {
-		when(context.getParameters()).thenReturn(new Object[]{});
+		when(context.getParameters()).thenReturn(new Object[]{person});
 		validator.valid(context);
-		
+	
 		verify(context).proceed();
 	}
 
