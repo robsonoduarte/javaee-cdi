@@ -40,17 +40,31 @@ public class ValidatorJobTest {
 	
 	
 	@Test(expected=ValidatorException.class)
-	public void shouldThrowsOneValidatorExceptionWhenJobIsNotProgrammer() throws Exception {
-		
-		person.job = "Doctor";
-		
-		
+	public void shouldThrowsOneValidatorExceptionWhenJobIsNotProgrammer() throws Exception {		
+		person.job = "Doctor";		
 		when(context.getParameters()).thenReturn(new Object[]{person});
+		
 		validator.valid(context);
 	
-		verify(context).proceed();
 	}
 
+	
+	
+	
+	
+	//Programmer
+	
+	@Test()
+	public void shouldProccedWhenJobIsProgrammer() throws Exception {
+		person.job = "Programmer";
+		when(context.getParameters()).thenReturn(new Object[]{person});
+		
+		validator.valid(context);
+		
+		verify(context).proceed();
+	}
+	
+	
 	
 	
 	

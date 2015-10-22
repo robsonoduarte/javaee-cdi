@@ -4,15 +4,33 @@ import javax.interceptor.InvocationContext;
 
 public class ValidatorJob {
 
-	public void valid(InvocationContext context) {	
+	
+	
+	
+	public Object valid(InvocationContext context) throws Exception {	
 		String job = job(context);
 		
 		if(!"Programmer".equals(job)){
 			throw new ValidatorException("Job should is Programmer");
 		}
 		
+		return context.proceed();
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
