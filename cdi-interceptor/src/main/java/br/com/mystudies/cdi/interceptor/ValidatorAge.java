@@ -1,9 +1,14 @@
 package br.com.mystudies.cdi.interceptor;
 
+import javax.interceptor.AroundInvoke;
+import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
 
+@Validator
+@Interceptor
 public class ValidatorAge {
 
+	@AroundInvoke
 	public Object valid(InvocationContext context) throws Exception {
 		int age = age(context);
 

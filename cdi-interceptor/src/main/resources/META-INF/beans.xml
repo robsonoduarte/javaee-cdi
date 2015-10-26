@@ -2,8 +2,8 @@
 <beans xmlns="http://java.sun.com/xml/ns/javaee"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://jboss.org/schema/cdi/beans_1_0.xsd">
  <interceptors>
+  <class>br.com.mystudies.cdi.interceptor.ValidatorJob</class>
   <class>br.com.mystudies.cdi.interceptor.ValidatorName</class>
   <class>br.com.mystudies.cdi.interceptor.ValidatorAge</class>
-  <class>br.com.mystudies.cdi.interceptor.ValidatorJob</class>
  </interceptors>
 </beans>

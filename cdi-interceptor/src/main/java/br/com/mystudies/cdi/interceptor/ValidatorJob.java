@@ -1,12 +1,16 @@
 package br.com.mystudies.cdi.interceptor;
 
+import javax.interceptor.AroundInvoke;
+import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
 
+@Validator
+@Interceptor
 public class ValidatorJob {
 
 	
 	
-	
+	@AroundInvoke
 	public Object valid(InvocationContext context) throws Exception {	
 		String job = job(context);
 		
